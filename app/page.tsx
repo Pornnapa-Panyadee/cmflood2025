@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { AlertTriangle, Droplets, MapPin, TrendingUp, Info } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function HomePage() {
   return (
@@ -25,78 +26,35 @@ export default function HomePage() {
        
 
         {/* Quick Stats */}
-        <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mb-3 grid gap-10">
           <Card>
-            <CardHeader className="pb-3">
-              <CardTitle className="text-sm font-medium text-muted-foreground">ระดับน้ำเฉลี่ย</CardTitle>
-            </CardHeader>
             <CardContent>
               <div className="flex items-baseline gap-2">
-                <span className="text-3xl font-bold text-foreground">1.2</span>
-                <span className="text-sm text-muted-foreground">เมตร</span>
+                <Image
+                  src="/images/flood/city.jpg"
+                  alt="City flood map"
+                  width={1000}
+                  height={600}
+                  className="rounded-xl object-cover shadow-md w-full h-auto"
+                />
               </div>
-              <Badge variant="secondary" className="mt-2">
-                ปกติ
-              </Badge>
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader className="pb-3">
-              <CardTitle className="text-sm font-medium text-muted-foreground">พื้นที่เสี่ยง</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="flex items-baseline gap-2">
-                <span className="text-3xl font-bold text-foreground">3</span>
-                <span className="text-sm text-muted-foreground">พื้นที่</span>
-              </div>
-              <Badge variant="secondary" className="mt-2">
-                ติดตาม
-              </Badge>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader className="pb-3">
-              <CardTitle className="text-sm font-medium text-muted-foreground">หลักวัดน้ำ</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="flex items-baseline gap-2">
-                <span className="text-3xl font-bold text-foreground">12</span>
-                <span className="text-sm text-muted-foreground">จุด</span>
-              </div>
-              <Badge variant="secondary" className="mt-2">
-                ทำงานปกติ
-              </Badge>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader className="pb-3">
-              <CardTitle className="text-sm font-medium text-muted-foreground">อัปเดตล่าสุด</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="flex items-baseline gap-2">
-                <span className="text-3xl font-bold text-foreground">5</span>
-                <span className="text-sm text-muted-foreground">นาที</span>
-              </div>
-              <Badge variant="secondary" className="mt-2">
-                เรียลไทม์
-              </Badge>
-            </CardContent>
-          </Card>
         </div>
 
         {/* Feature Cards */}
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
+        <div className="grid gap-4 md:grid-cols-4 lg:grid-cols-4">
           <Card className="overflow-hidden">
             <div className="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
+              <Image
+                  src="/images/banner/hazardmap.png"
+                  alt="City flood map"
+                  width={1000}
+                  height={600}
+                />
               <MapPin className="h-16 w-16 text-primary" />
             </div>
-            <CardHeader>
-              <CardTitle className="text-foreground">แผนที่เสี่ยงภัยน้ำท่วม</CardTitle>
-              <CardDescription>ดูพื้นที่เสี่ยงภัยน้ำท่วมในเขตเมือง พร้อมข้อมูลระดับความเสี่ยง</CardDescription>
-            </CardHeader>
             <CardContent>
               <Link href="/risk-map">
                 <Button className="w-full">ดูแผนที่</Button>
@@ -105,55 +63,57 @@ export default function HomePage() {
           </Card>
 
           <Card className="overflow-hidden">
-            <div className="aspect-video bg-gradient-to-br from-chart-2/20 to-chart-2/5 flex items-center justify-center">
-              <Droplets className="h-16 w-16 text-chart-2" />
+            <div className="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
+              <Image
+                  src="/images/banner/hazardmap.png"
+                  alt="City flood map"
+                  width={1000}
+                  height={600}
+                />
+              <MapPin className="h-16 w-16 text-primary" />
             </div>
-            <CardHeader>
-              <CardTitle className="text-foreground">หลักวัดระดับน้ำ</CardTitle>
-              <CardDescription>ตรวจสอบข้อมูลจากหลักวัดระดับน้ำทั้งหมดในเขตเมือง</CardDescription>
-            </CardHeader>
             <CardContent>
-              <Link href="/water-pillars">
-                <Button className="w-full" variant="secondary">
-                  ดูข้อมูล
-                </Button>
+              <Link href="/risk-map">
+                <Button className="w-full">ดูแผนที่</Button>
               </Link>
             </CardContent>
           </Card>
 
           <Card className="overflow-hidden">
-            <div className="aspect-video bg-gradient-to-br from-chart-4/20 to-chart-4/5 flex items-center justify-center">
-              <Info className="h-16 w-16 text-chart-4" />
+            <div className="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
+              <Image
+                  src="/images/banner/hazardmap.png"
+                  alt="City flood map"
+                  width={1000}
+                  height={600}
+                />
+              <MapPin className="h-16 w-16 text-primary" />
             </div>
-            <CardHeader>
-              <CardTitle className="text-foreground">เครื่องหมายระดับน้ำเมือง</CardTitle>
-              <CardDescription>ดูเครื่องหมายระดับน้ำและจุดวัดต่างๆ ในเขตเมือง</CardDescription>
-            </CardHeader>
             <CardContent>
-              <Link href="/city-levels">
-                <Button className="w-full" variant="secondary">
-                  ดูรายละเอียด
-                </Button>
+              <Link href="/risk-map">
+                <Button className="w-full">ดูแผนที่</Button>
               </Link>
             </CardContent>
           </Card>
 
           <Card className="overflow-hidden">
-            <div className="aspect-video bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center">
-              <TrendingUp className="h-16 w-16 text-accent" />
+            <div className="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
+              <Image
+                  src="/images/banner/hazardmap.png"
+                  alt="City flood map"
+                  width={1000}
+                  height={600}
+                />
+              <MapPin className="h-16 w-16 text-primary" />
             </div>
-            <CardHeader>
-              <CardTitle className="text-foreground">แผนที่ประมาณการน้ำท่วม</CardTitle>
-              <CardDescription>ดูการพยากรณ์ระดับน้ำและพื้นที่ที่อาจได้รับผลกระทบ</CardDescription>
-            </CardHeader>
             <CardContent>
-              <Link href="/forecast">
-                <Button className="w-full" variant="secondary">
-                  ดูพยากรณ์
-                </Button>
+              <Link href="/risk-map">
+                <Button className="w-full">ดูแผนที่</Button>
               </Link>
             </CardContent>
           </Card>
+
+
         </div>
 
         {/* Info Section */}
